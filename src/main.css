@@ -16,6 +16,12 @@
   --color-neutral-navy-900: hsl(235, 46%, 20%);
   --color-neutral-navy-200: hsl(236, 100%, 87%);
 
+  --color-card-hover: color-mix(
+    in hsl,
+    var(--color-neutral-navy-900) 85%,
+    white
+  );
+
   /* typografi */
   --font-rubik: "Rubik Variable", sans-serif;
 

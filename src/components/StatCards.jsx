@@ -31,7 +31,7 @@ export default function StatCards({ selectedTimeframe }) {
 
     const image = iconMapping[data.title];
     const currentStat = data.timeframes[selectedTimeframe].current;
-    const previousState = data.timeframes[selectedTimeframe].previous;
+    const previousStat = data.timeframes[selectedTimeframe].previous;
 
     return (
       <StatCard
@@ -39,16 +39,10 @@ export default function StatCards({ selectedTimeframe }) {
         title={data.title}
         image={image}
         currentStat={`${currentStat}hrs`}
-        previousText={previousText}
-        previousState={`${previousText} ${previousState}hrs`}
+        previousStat={`${previousText} ${previousStat}hrs`}
       />
     );
   });
-
-  let currentStat = "";
-  if (selectedTimeframe === "daily") {
-    currentStat = DATA.timeframes.daily.current;
-  }
 
   return <>{statCards}</>;
 }

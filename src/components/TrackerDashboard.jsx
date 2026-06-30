@@ -8,15 +8,17 @@ export default function TrackerDashboard() {
 
   const handleClick = (selectedButton) => {
     setSelectedTimeframe(selectedButton);
-    console.log(selectedTimeframe);
   };
 
   return (
     <>
       <ProfileCard
         onClickDaily={() => handleClick("daily")}
+        isDailySelected={selectedTimeframe === "daily"}
         onClickWeekly={() => handleClick("weekly")}
+        isWeeklySelected={selectedTimeframe === "weekly"}
         onClickMonthly={() => handleClick("monthly")}
+        isMonthlySelected={selectedTimeframe === "monthly"}
       />
       <StatCards selectedTimeframe={selectedTimeframe} />
     </>

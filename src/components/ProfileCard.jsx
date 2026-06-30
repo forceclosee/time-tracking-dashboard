@@ -7,6 +7,9 @@ export default function ProfileCard({
   onClickDaily,
   onClickWeekly,
   onClickMonthly,
+  isDailySelected,
+  isWeeklySelected,
+  isMonthlySelected,
 }) {
   return (
     <section className="max-block-max bg-neutral-navy-900 rounded-2xl">
@@ -24,9 +27,17 @@ export default function ProfileCard({
         </div>
       </div>
       <menu className="flex justify-between px-5 py-3">
-        <TimeframeButton onClick={onClickDaily}>Daily</TimeframeButton>
-        <TimeframeButton onClick={onClickWeekly}>Weekly</TimeframeButton>
-        <TimeframeButton onClick={onClickMonthly}>Monthly</TimeframeButton>
+        <TimeframeButton onClick={onClickDaily} isSelected={isDailySelected}>
+          Daily
+        </TimeframeButton>
+        <TimeframeButton onClick={onClickWeekly} isSelected={isWeeklySelected}>
+          Weekly
+        </TimeframeButton>
+        <TimeframeButton
+          onClick={onClickMonthly}
+          isSelected={isMonthlySelected}>
+          Monthly
+        </TimeframeButton>
       </menu>
     </section>
   );
