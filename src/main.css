@@ -46,3 +46,11 @@
 @utility trim-both-text {
   text-box: trim-both cap text;
 }
+
+@utility areas {
+  grid-template-areas: "card";
+}
+
+@utility area-card {
+  grid-area: card;
+}
