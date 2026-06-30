@@ -1,4 +1,4 @@
-export default function StatCard({ image, title }) {
+export default function StatCard({ image, title, currentStat, previousState }) {
   let cardColor = "";
   if (title === "Work") {
     cardColor = "bg-primary-orange-300-work";
@@ -28,7 +28,7 @@ export default function StatCard({ image, title }) {
       <div className="block-[76%] z-2 grid grid-cols-2 self-end bg-neutral-navy-900 p-6 rounded-2xl area-card">
         <div>
           <h2 className="font-medium text-lg">{title}</h2>
-          <p className="mbs-1.5 font-light text-3xl"></p>
+          <p className="mbs-1.5 font-light text-3xl">{currentStat}</p>
         </div>
         <div className="text-end">
           <button type="button">
@@ -40,9 +40,7 @@ export default function StatCard({ image, title }) {
               />
             </svg>
           </button>
-          <p className="mbs-4 font-light text-[0.96rem]">
-            <span></span>
-          </p>
+          <p className="mbs-4 font-light text-[0.96rem]">{previousState}</p>
         </div>
       </div>
     </section>

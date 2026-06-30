@@ -1,6 +1,7 @@
 import DATA from "../data/data.json";
 
 import StatCard from "./StatCard";
+
 import iconWork from "../assets/icon-work.svg";
 import iconPlay from "../assets/icon-play.svg";
 import iconStudy from "../assets/icon-study.svg";
@@ -8,15 +9,46 @@ import iconExercise from "../assets/icon-exercise.svg";
 import iconSocial from "../assets/icon-social.svg";
 import iconSelfCare from "../assets/icon-self-care.svg";
 
-export default function StatCards() {
-  return (
-    <>
-      <StatCard image={iconWork} title={DATA[0].title} />
-      <StatCard image={iconPlay} title={DATA[1].title} />
-      <StatCard image={iconStudy} title={DATA[2].title} />
-      <StatCard image={iconExercise} title={DATA[3].title} />
-      <StatCard image={iconSocial} title={DATA[4].title} />
-      <StatCard image={iconSelfCare} title={DATA[5].title} />
-    </>
-  );
+const iconMapping = {
+  Work: iconWork,
+  Play: iconPlay,
+  Study: iconStudy,
+  Exercise: iconExercise,
+  Social: iconSocial,
+  "Self Care": iconSelfCare,
+};
+
+export default function StatCards({ selectedTimeframe }) {
+  const statCards = DATA.map((data) => {
+    let previousText = "";
+    if (selectedTimeframe === "daily") {
+      previousText = "Last Day - ";
+    } else if (selectedTimeframe === "weekly") {
+      previousText = "Last Week - ";
+    } else if (selectedTimeframe === "monthly") {
+      previousText = "Last Month - ";
+    }
+
+    const image = iconMapping[data.title];
+    const currentStat = data.timeframes[selectedTimeframe].current;
+    const previousState = data.timeframes[selectedTimeframe].previous;
+
+    return (
+      <StatCard
+        key={data.title}
+        title={data.title}
+        image={image}
+        currentStat={`${currentStat}hrs`}
+        previousText={previousText}
+        previousState={`${previousText} ${previousState}hrs`}
+      />
+    );
+  });
+
+  let currentStat = "";
+  if (selectedTimeframe === "daily") {
+    currentStat = DATA.timeframes.daily.current;
+  }
+
+  return <>{statCards}</>;
 }
