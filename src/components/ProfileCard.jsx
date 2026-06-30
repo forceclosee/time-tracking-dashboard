@@ -7,7 +7,7 @@ export default function ProfileCard() {
   const handleClick = (selectedTimeframe) => console.log(selectedTimeframe);
 
   return (
-    <section className="max-block-max max-inline-82 bg-neutral-navy-900 rounded-2xl">
+    <section className="max-block-max bg-neutral-navy-900 rounded-2xl">
       <div className="grid grid-cols-[auto_1fr] items-center gap-4 bg-primary-purple-600 p-8 rounded-2xl">
         <img
           src={imageJeremy}
