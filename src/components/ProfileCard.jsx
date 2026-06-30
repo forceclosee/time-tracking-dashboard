@@ -4,15 +4,7 @@ import { timeframeOptions } from "../data/constants";
 import imageJeremy from "../assets/image-jeremy.png";
 
 export default function ProfileCard() {
-  const timeframeList = timeframeOptions.map((data) => (
-    <TimeframeButton
-      key={data.id}
-      id={data.id}
-      defaultChecked={data.isDefaultChecked}
-      htmlFor={data.id}
-      label={data.label}
-    />
-  ));
+  const handleClick = (selectedTimeframe) => console.log(selectedTimeframe);
 
   return (
     <section className="max-block-max max-inline-82 bg-neutral-navy-900 rounded-2xl">
@@ -29,7 +21,17 @@ export default function ProfileCard() {
           <h2 className="font-light text-2xl">Jeremy Robson</h2>
         </div>
       </div>
-      <div className="flex justify-between px-8 py-5">{timeframeList}</div>
+      <menu className="flex justify-between px-5 py-3">
+        <TimeframeButton onClick={() => handleClick("daily")}>
+          Daily
+        </TimeframeButton>
+        <TimeframeButton onClick={() => handleClick("weekly")}>
+          Weekly
+        </TimeframeButton>
+        <TimeframeButton onClick={() => handleClick("monthly")}>
+          Monthly
+        </TimeframeButton>
+      </menu>
     </section>
   );
 }
