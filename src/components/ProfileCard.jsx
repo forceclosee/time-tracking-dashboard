@@ -3,9 +3,11 @@ import { timeframeOptions } from "../data/constants";
 
 import imageJeremy from "../assets/image-jeremy.png";
 
-export default function ProfileCard() {
-  const handleClick = (selectedTimeframe) => console.log(selectedTimeframe);
-
+export default function ProfileCard({
+  onClickDaily,
+  onClickWeekly,
+  onClickMonthly,
+}) {
   return (
     <section className="max-block-max bg-neutral-navy-900 rounded-2xl">
       <div className="grid grid-cols-[auto_1fr] items-center gap-4 bg-primary-purple-600 p-8 rounded-2xl">
@@ -22,15 +24,9 @@ export default function ProfileCard() {
         </div>
       </div>
       <menu className="flex justify-between px-5 py-3">
-        <TimeframeButton onClick={() => handleClick("daily")}>
-          Daily
-        </TimeframeButton>
-        <TimeframeButton onClick={() => handleClick("weekly")}>
-          Weekly
-        </TimeframeButton>
-        <TimeframeButton onClick={() => handleClick("monthly")}>
-          Monthly
-        </TimeframeButton>
+        <TimeframeButton onClick={onClickDaily}>Daily</TimeframeButton>
+        <TimeframeButton onClick={onClickWeekly}>Weekly</TimeframeButton>
+        <TimeframeButton onClick={onClickMonthly}>Monthly</TimeframeButton>
       </menu>
     </section>
   );
