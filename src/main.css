@@ -26,6 +26,9 @@
   --font-rubik: "Rubik Variable", sans-serif;
 
   --text-2xs: 0.6875rem;
+
+  /* media queries */
+  --breakpoint-md: 46rem;
 }
 
 @layer components {
@@ -59,4 +62,27 @@
 
 @utility area-card {
   grid-area: card;
+}
+
+@utility stats-area {
+  grid-template-areas:
+    "title  title"
+    "stat   previous";
+
+  @media (width >= 64rem) {
+    grid-template-areas:
+      "title"
+      "stat"
+      "previous";
+  }
+}
+
+@utility area-title {
+  grid-area: title;
+}
+@utility area-stat {
+  grid-area: stat;
+}
+@utility area-previous {
+  grid-area: previous;
 }

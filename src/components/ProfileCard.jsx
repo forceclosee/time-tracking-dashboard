@@ -12,21 +12,23 @@ export default function ProfileCard({
   isMonthlySelected,
 }) {
   return (
-    <section className="max-block-max bg-neutral-navy-900 rounded-2xl">
-      <div className="grid grid-cols-[auto_1fr] items-center gap-4 bg-primary-purple-600 p-8 rounded-2xl">
+    <section className="min-block-50 lg:block-130 inline-full md:max-inline-[28rem] grid md:col-span-2 lg:col-span-1 lg:row-span-2 bg-neutral-navy-900 mx-auto rounded-2xl areas">
+      <div className="block-[66.6%] lg:block-[68%] grid grid-cols-[auto_1fr] lg:grid-cols-1 items-center gap-4 bg-primary-purple-600 p-8 rounded-2xl area-card">
         <img
           src={imageJeremy}
           alt=""
           width={234}
           height={234}
-          className="block-17 inline-auto border-3 rounded-full"
+          className="max-block-[clamp(4.25rem,_3.8166rem_+_1.8489vi,_5rem)] inline-auto lg:self-start border-3 rounded-full"
         />
-        <div>
+        <div className="lg:self-start">
           <p className="font-light text-gray-300">Report for</p>
-          <h2 className="font-light text-2xl">Jeremy Robson</h2>
+          <h2 className="font-light text-[clamp(1.5rem,_0.9221rem_+_2.4653vw,_2.5rem)] leading-12">
+            Jeremy Robson
+          </h2>
         </div>
       </div>
-      <menu className="flex justify-between px-5 py-3">
+      <menu className="block-[33.3%] lg:block-[32%] flex lg:flex-col justify-between self-end px-5 py-3 lg:py-5 text-lg area-card">
         <TimeframeButton onClick={onClickDaily} isSelected={isDailySelected}>
           Daily
         </TimeframeButton>
