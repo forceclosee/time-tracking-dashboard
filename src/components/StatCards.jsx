@@ -22,7 +22,7 @@ export default function StatCards({ selectedTimeframe }) {
   const statCards = DATA.map((data) => {
     let previousText = "";
     if (selectedTimeframe === "daily") {
-      previousText = "Last Day - ";
+      previousText = "Yesterday - ";
     } else if (selectedTimeframe === "weekly") {
       previousText = "Last Week - ";
     } else if (selectedTimeframe === "monthly") {
