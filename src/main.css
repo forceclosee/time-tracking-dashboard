@@ -86,3 +86,16 @@
 @utility area-previous {
   grid-area: previous;
 }
+
+@utility underline-hover {
+  background: linear-gradient(currentColor 0 0) var(--p, 0) 100% / var(--d, 0)
+    2px no-repeat;
+  transition:
+    0.3s,
+    background-position 0s 0.3s;
+
+  &:hover {
+    --d: 100%;
+    --p: 100%;
+  }
+}

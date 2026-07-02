@@ -4,7 +4,7 @@ export default function Footer() {
       <p>
         Challenge by{" "}
         <a
-          className="text-primary-green-400-exercise"
+          className="pbe-0.5 text-primary-green-400-exercise underline-hover"
           href="https://www.frontendmentor.io?ref=challenge"
           target="blank"
           rel="noopener noreferrer">
@@ -12,7 +12,7 @@ export default function Footer() {
         </a>
         . Coded by{" "}
         <a
-          className="text-primary-green-400-exercise"
+          className="pbe-0.5 text-primary-green-400-exercise underline-hover"
           href="https://github.com/forceclosee"
           target="blank"
           rel="noopener noreferrer">

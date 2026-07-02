@@ -26,7 +26,7 @@ export default function StatCard({ image, title, currentStat, previousStat }) {
         <img className="-my-3 me-4" src={image} alt="" />
       </div>
 
-      <div className="block-[76%] lg:block-[81.6%] z-2 grid self-end bg-neutral-navy-900 hover:bg-card-hover px-[clamp(1.5rem,_1.2110rem_+_1.2326vi,_2rem)] py-8 rounded-2xl cursor-pointer areas area-card">
+      <div className="block-[76%] lg:block-[81.6%] z-2 grid self-end bg-neutral-navy-900 hover:bg-card-hover px-[clamp(1.5rem,_1.2110rem_+_1.2326vi,_2rem)] py-8 rounded-2xl transition-all duration-300 cursor-pointer areas area-card">
         <div className="grid grid-cols-[repeat(2,_auto)] items-center gap-x-4 area-card stats-area">
           <h2 className="font-medium text-lg area-title trim-both-text">
             {title}
@@ -41,7 +41,7 @@ export default function StatCard({ image, title, currentStat, previousStat }) {
 
         <button
           type="button"
-          className="justify-self-end self-start text-gray-400 hover:text-gray-200 cursor-pointer area-card">
+          className="justify-self-end self-start text-gray-400 hover:text-gray-200 transition-all duration-300 cursor-pointer area-card">
           <svg
             width="21"
             height="5"
