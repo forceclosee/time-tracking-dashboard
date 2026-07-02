@@ -4,13 +4,13 @@ import { timeframeOptions } from "../data/constants";
 import imageJeremy from "../assets/image-jeremy.png";
 
 export default function ProfileCard({
-  onClickDaily,
-  onClickWeekly,
-  onClickMonthly,
-  isDailySelected,
-  isWeeklySelected,
-  isMonthlySelected,
+  selectedTimeframe,
+  setSelectedTimeframe,
 }) {
+  const handleClick = (selectedButton) => {
+    setSelectedTimeframe(selectedButton);
+  };
+
   return (
     <section className="min-block-50 lg:block-130 inline-full md:max-inline-[28rem] grid md:col-span-2 lg:col-span-1 lg:row-span-2 bg-neutral-navy-900 mx-auto rounded-2xl areas">
       <div className="block-[66.6%] lg:block-[68%] grid grid-cols-[auto_1fr] lg:grid-cols-1 items-center gap-4 bg-primary-purple-600 p-8 rounded-2xl area-card">
@@ -29,15 +29,19 @@ export default function ProfileCard({
         </div>
       </div>
       <menu className="block-[33.3%] lg:block-[32%] flex lg:flex-col justify-between self-end px-5 py-3 lg:py-5 text-lg area-card">
-        <TimeframeButton onClick={onClickDaily} isSelected={isDailySelected}>
+        <TimeframeButton
+          onClick={() => handleClick("daily")}
+          isSelected={selectedTimeframe === "daily"}>
           Daily
         </TimeframeButton>
-        <TimeframeButton onClick={onClickWeekly} isSelected={isWeeklySelected}>
+        <TimeframeButton
+          onClick={() => handleClick("weekly")}
+          isSelected={selectedTimeframe === "weekly"}>
           Weekly
         </TimeframeButton>
         <TimeframeButton
-          onClick={onClickMonthly}
-          isSelected={isMonthlySelected}>
+          onClick={() => handleClick("monthly")}
+          isSelected={selectedTimeframe === "monthly"}>
           Monthly
         </TimeframeButton>
       </menu>

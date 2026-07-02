@@ -38,8 +38,8 @@ export default function StatCards({ selectedTimeframe }) {
         key={data.title}
         title={data.title}
         image={image}
-        currentStat={`${currentStat}hrs`}
-        previousStat={`${previousText} ${previousStat}hrs`}
+        currentStat={`${currentStat}${currentStat <= 1 ? "hr" : "hrs"}`}
+        previousStat={`${previousText}${previousStat}${previousStat <= 1 ? "hr" : "hrs"}`}
       />
     );
   });
